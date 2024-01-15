@@ -80,8 +80,26 @@ public class StringOps {
                 return fix;
     }
 
-    public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+    public static int[] allIndexOf (String string, char chr) 
+    {
+        int counnter=0;
+        for(int i=0;i<string.length();i++)
+        {
+            if(string.charAt(i)==chr)
+            {
+                counnter++;
+            }
+        }
+        int[] a=new int[counnter];
+        int index=0;
+        for(int j=0;j<string.length();j++)
+        {
+            if (string.charAt(j)==chr) 
+            {
+                a[index]= j;
+                index++;   
+            }
+        }
+        return a;
     }
 }
