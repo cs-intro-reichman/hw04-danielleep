@@ -27,36 +27,20 @@ public class StringOps {
 
     public static String capVowelsLowRest (String string) 
     {
-        char[] a=new char[string.length()];
-        String order="";
-        char c;
-        int x = string.charAt(0);
-        for(int i=0; i<string.length();i++)
+        String order = "";
+        char a=string.charAt(0);
+        for (int i = 0; i < string.length(); i++)
         {
-            c=string.charAt(i);
-            x=c;
-            if(x==32)
+            a=string.charAt(i);
+            if (a=='a' ||a=='e' ||a =='i' ||a=='o' ||a =='u')
             {
-                a[i] =' '; 
+                order += (char)(a-32);
             }
-            else if (90>=x && x>=65)        
+            else if (a>= 'A' && a<= 'Z' && (a!= 'A' && a!= 'E' && a!= 'I' && a!= 'O' && a!= 'U')) 
             {
-                a[i] = ((char)(c+32));
+                order += (char)(a+32);
             }
-            else a[i] = c;
-        }
-        for (int j=0; j<string.length();j++)
-        {
-            c=string.charAt(j);
-            x=c;
-            if (x==97 || x==101 || x==105 || x==111 || x==117)
-            {
-                a[j] = (char)(c-32);
-            }
-        }
-        for (int k=0; k<a.length;k++)
-        {
-            order += a[k];
+            else order+=a;
         }
         return order;
 
