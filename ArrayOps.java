@@ -2,7 +2,7 @@ public class ArrayOps
 {
     public static void main(String[] args) 
     {
-        
+        System.out.println(isSorted(new int[] {1,2,3}));
     }
     
     public static int findMissingInt (int [] array) 
@@ -79,7 +79,7 @@ public class ArrayOps
     {
         if (array[0]<array[1])
         {
-            for(int i =0;i<array.length;i++)
+            for(int i =0;i<array.length-1;i++)
             {
                 if(array[i]>array[i+1])
                 {
@@ -89,7 +89,7 @@ public class ArrayOps
         }
         else
         {
-            for(int i=0;i<array.length;i++)
+            for(int i=0;i<array.length-1;i++)
             {
                 if(array[i]<array[i+1])
                 {
