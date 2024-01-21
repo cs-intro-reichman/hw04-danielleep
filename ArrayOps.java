@@ -5,7 +5,7 @@ public class ArrayOps
         System.out.println(isSorted(new int[] {1,2,3}));
     }
     
-    public static int findMissingInt (int [] array) 
+    public static int findMissingInt (int[] array) 
     {
         int[] fix=new int[array.length+1];
         for(int j=0;j<=fix.length;j++)
@@ -15,17 +15,17 @@ public class ArrayOps
                 fix[array[j]]=1;               
             }
         }
-        for(int i=0;i<=fix.length;i++)
+        for(int i=0;i<=fix.length;i++) // #feedback - note that you can still use j here since these are two different loops (no inner loops).
         {
             if(fix[i]==0)
             {
                 return i;
             }
         }
-        return array.length+1;
+        return array.length+1; // #feedback - array.length=n, so no need for the "+1".
     }
 
-    public static int secondMaxValue(int [] array) 
+    public static int secondMaxValue(int[] array) 
     {
         int max=array[0];
         int secondMax=array[0];
@@ -48,9 +48,10 @@ public class ArrayOps
     public static boolean containsTheSameElements(int [] array1,int [] array2) 
     {
         int counter =0;
+        // #feedback - you also need to check that the elements in array2 are in array1. In the current implementation it is possible that array2 contains elements that are not in array1.
         for(int i=0;i<array1.length;i++)
         {
-            if (contain(array2, array1[i])==true)
+            if (contain(array2, array1[i])==true) // #feedback - no need to check the equality to "true" for boolan values in an "if" statement.
             {
                 counter++;
             }
