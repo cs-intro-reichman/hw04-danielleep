@@ -28,7 +28,7 @@ public class StringOps {
     public static String capVowelsLowRest (String string) 
     {
         String order = "";
-        char a=string.charAt(0);
+        char a=string.charAt(0); // #feedback - no need to assign a value to this variable here, it is done inside the loop.
         for (int i = 0; i < string.length(); i++)
         {
             a=string.charAt(i);
@@ -53,7 +53,8 @@ public class StringOps {
         {
             while (string.charAt(i) == ' ') 
             {
-                i++;
+                i++; // #feedback - it can be confusing to change "i" here and in the for loop, and it makes it harder to debug. 
+                     // Consider having a single loop on the entire string and check for a space in the current character. You can have a boolean variable to indicate that you saw a space char.
                 if (fix != "")
                 {
                   if (string.charAt(i) >= 'a' && string.charAt(i) <= 'z') 
@@ -68,6 +69,7 @@ public class StringOps {
                   }
                 }
             }
+            // #feedback - it is usually better to have code that repeats throughout the funciton in a helper function, to avoid code repetition.
             if (string.charAt(i) >= 'A' && string.charAt(i) <= 'Z') 
             {
                 fix += (char)(string.charAt(i)+32);
@@ -90,7 +92,7 @@ public class StringOps {
                 counnter++;
             }
         }
-        int[] a=new int[counnter];
+        int[] a=new int[counnter]; // #feedback - it is usually better to use more indicative names, such as array or even better charIndexArray.
         int index=0;
         for(int j=0;j<string.length();j++)
         {
